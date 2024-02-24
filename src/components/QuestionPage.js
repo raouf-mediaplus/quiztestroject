@@ -10,10 +10,10 @@ function QuestionPage({
   onAnswerSubmit,
 }) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [reponse, setReponse] = useState([]);
+  const [reponse, setReponse] = useState(null);
 
   const handleSubmit = (reponse) => {
-    onAnswerSubmit(questionIndex, reponse);
+    onAnswerSubmit(currentPage - 1, reponse);
     setQuestionIndex(questionIndex + 1);
     setReponse(reponse);
   };
@@ -49,7 +49,7 @@ function QuestionPage({
                   key={index + 1}
                   variant="outlined"
                   disabled={reponse !== null}
-                  onClick={() => handleSubmit(index + 1)}
+                  onClick={() => handleSubmit(reponse)}
                 >
                   {index + 1}
                 </Button>

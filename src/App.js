@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importez BrowserRouter
 import QuestionPage from "./components/QuestionPage";
 import ResultatPage from "./components/ResultatPage";
+import Header from "./components/Header";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { LinearProgress } from "@mui/material";
 
 const theme = createTheme();
 
 function App() {
+  const [currentCategory, setCurrentCategory] = useState("");
   const [questions, setQuestions] = useState([]);
   const [reponses, setReponses] = useState([]);
   const [completedQuestions, setCompletedQuestions] = useState(0);
@@ -41,12 +43,17 @@ function App() {
       {
         id: 1,
         text: "Question 1",
-        // Autres propriétés de la question...
+        category: 1,
       },
       {
         id: 2,
         text: "Question 2",
-        // Autres propriétés de la question...
+        category: 1,
+      },
+      {
+        id: 3,
+        text: "Question 3",
+        category: 2,
       },
       // Ajoutez d'autres questions au besoin
     ];
@@ -55,8 +62,29 @@ function App() {
     setQuestionsPerPage(questionsData.length);
   }, []);
 
-  const handleAnswerSubmit = (questionIndex, reponse) => {
-    setReponses([...reponses, reponse]);
+  useEffect(() => {
+    // Exemple de récupération de la catégorie en fonction de la page actuelle ou d'autres informations
+    const getCategoryForPage = () => {
+      // Implémentez la logique pour obtenir la catégorie en fonction de la page actuelle.
+      // Pour l'exemple, une catégorie statique.
+      setCurrentCategory("Catégorie 1");
+    };
+
+    getCategoryForPage();
+  }, []);
+
+  // const handleAnswerSubmit = (questionIndex, reponse) => {
+  //   setReponses([...reponses, reponse]);
+  //   setCompletedQuestions(completedQuestions + 1);
+  //   if (questionIndex + 1 === questions.length) {
+  //     setCurrentPage(currentPage + 1);
+  //   }
+  // };
+
+  const handleAnswerSubmit = (questionIndex, response) => {
+    const updatedReponses = [...reponses];
+    updatedReponses[questionIndex] = response;
+    setReponses(updatedReponses);
     setCompletedQuestions(completedQuestions + 1);
     if (questionIndex + 1 === questions.length) {
       setCurrentPage(currentPage + 1);
@@ -66,7 +94,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        {" "}
+        <Header category={currentCategory} />
         {/* Utilisez BrowserRouter comme composant parent */}
         <Routes>
           <Route
