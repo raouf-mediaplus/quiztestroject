@@ -108,6 +108,7 @@ function App() {
                 currentPage={currentPage}
                 totalQuestions={questions.length}
                 onAnswerSubmit={handleAnswerSubmit}
+                category={currentCategory}
               />
             }
           />
