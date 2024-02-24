@@ -15,33 +15,44 @@ function App() {
   const [questionsPerPage, setQuestionsPerPage] = useState(1); // Nombre de questions par page, initialisé à 1
 
   // useEffect(() => {
-  //   fetch("data/questions.json")
-  //     .then((response) => response.json())
-  //     .then((data) => {
+  //   const fetchQuestions = async () => {
+  //     try {
+  //       const response = await fetch("data/questions.json");
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch questions");
+  //       }
+  //       const data = await response.json();
+  //       if (!Array.isArray(data)) {
+  //         throw new Error("Invalid data format: questions should be an array");
+  //       }
   //       setQuestions(data);
   //       setQuestionsPerPage(data.length);
-  //     });
+  //     } catch (error) {
+  //       console.error("Error fetching questions:", error.message);
+  //       // Gérer l'erreur : afficher un message d'erreur à l'utilisateur, journaliser l'erreur, etc.
+  //     }
+  //   };
+
+  //   fetchQuestions();
   // }, []);
   useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await fetch("data/questions.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch questions");
-        }
-        const data = await response.json();
-        if (!Array.isArray(data)) {
-          throw new Error("Invalid data format: questions should be an array");
-        }
-        setQuestions(data);
-        setQuestionsPerPage(data.length);
-      } catch (error) {
-        console.error("Error fetching questions:", error.message);
-        // Gérer l'erreur : afficher un message d'erreur à l'utilisateur, journaliser l'erreur, etc.
-      }
-    };
+    // Définition des données des questions directement dans le code
+    const questionsData = [
+      {
+        id: 1,
+        text: "Question 1",
+        // Autres propriétés de la question...
+      },
+      {
+        id: 2,
+        text: "Question 2",
+        // Autres propriétés de la question...
+      },
+      // Ajoutez d'autres questions au besoin
+    ];
 
-    fetchQuestions();
+    setQuestions(questionsData);
+    setQuestionsPerPage(questionsData.length);
   }, []);
 
   const handleAnswerSubmit = (questionIndex, reponse) => {
