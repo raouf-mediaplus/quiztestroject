@@ -5,6 +5,7 @@ import ResultatPage from "./components/ResultatPage";
 import Header from "./components/Header";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { LinearProgress } from "@mui/material";
+var questionsData = require("./data/questions.json");
 
 const theme = createTheme();
 
@@ -38,26 +39,6 @@ function App() {
   //   fetchQuestions();
   // }, []);
   useEffect(() => {
-    // Définition des données des questions directement dans le code
-    const questionsData = [
-      {
-        id: 1,
-        text: "On a scale from 1 to 5, how crucial is the metric of customer feedback speed in monitoring systems for informing Business Decision",
-        category: 1,
-      },
-      {
-        id: 2,
-        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-        category: 1,
-      },
-      {
-        id: 3,
-        text: "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text",
-        category: 1,
-      },
-      // Ajoutez d'autres questions au besoin
-    ];
-
     setQuestions(questionsData);
     setQuestionsPerPage(questionsData.length);
   }, []);
