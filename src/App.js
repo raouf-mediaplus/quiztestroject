@@ -42,18 +42,18 @@ function App() {
     const questionsData = [
       {
         id: 1,
-        text: "Question 1",
+        text: "On a scale from 1 to 5, how crucial is the metric of customer feedback speed in monitoring systems for informing Business Decision",
         category: 1,
       },
       {
         id: 2,
-        text: "Question 2",
+        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         category: 1,
       },
       {
         id: 3,
-        text: "Question 3",
-        category: 2,
+        text: "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text",
+        category: 1,
       },
       // Ajoutez d'autres questions au besoin
     ];

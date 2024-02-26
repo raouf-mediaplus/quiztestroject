@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LinearProgress, Button } from "@mui/material";
+import "./QuestionPage.css";
 
 function QuestionPage({
   questions,
@@ -27,16 +28,20 @@ function QuestionPage({
   const isLastQuestionInCategory = questionIndex === questions.length;
 
   return (
-    <div>
+    <div className="questionsContainer">
       <LinearProgress
         variant="determinate"
         value={(completedQuestions / totalQuestions) * 100}
+        color="success"
+        sx={{ bgcolor: "#fff", marginTop: "-2rem" }}
       />
       {!isLastQuestionInCategory && (
-        <h2>
-          Question {questionIndex + 1 + (currentPage - 1) * questions.length} /{" "}
-          {totalQuestions}
-        </h2>
+        <>
+          <h4 style={{ marginTop: "4rem" }}>
+            Question {questionIndex + 1 + (currentPage - 1) * questions.length}{" "}
+            / {totalQuestions}
+          </h4>
+        </>
       )}
       {questionIndex < questions.length && (
         <>
@@ -46,14 +51,16 @@ function QuestionPage({
                 .question
             }
           </p>
-          <div>
+          <h4>{questions[questionIndex].text}</h4>
+          <div className="buttons">
             {Array(5)
               .fill(null)
               .map((_, index) => (
                 <Button
                   key={index + 1}
-                  variant="outlined"
+                  variant="contained"
                   disabled={reponse !== null}
+                  sx={{ margin: 1 }}
                   onClick={() => handleSubmit(reponse)}
                 >
                   {index + 1}
@@ -65,7 +72,9 @@ function QuestionPage({
 
       {/* A la fin des questions d'une catégorie */}
       {questionIndex === questions.length && (
-        <p>Fin des questions de la catégorie: {category}</p>
+        <p style={{ color: "white" }}>
+          Fin des questions de la catégorie: {category}
+        </p>
       )}
     </div>
   );
