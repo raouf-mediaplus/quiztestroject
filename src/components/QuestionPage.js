@@ -35,40 +35,53 @@ function QuestionPage({
         color="success"
         sx={{ bgcolor: "#fff", marginTop: "-2rem" }}
       />
-      {!isLastQuestionInCategory && (
-        <>
-          <h4 style={{ marginTop: "4rem" }}>
-            Question {questionIndex + 1 + (currentPage - 1) * questions.length}{" "}
-            / {totalQuestions}
-          </h4>
-        </>
-      )}
-      {questionIndex < questions.length && (
-        <>
-          <p>
-            {
-              questions[questionIndex + (currentPage - 1) * questions.length]
-                .question
-            }
-          </p>
-          <h4>{questions[questionIndex].text}</h4>
-          <div className="buttons">
-            {Array(5)
-              .fill(null)
-              .map((_, index) => (
-                <Button
-                  key={index + 1}
-                  variant="contained"
-                  disabled={reponse !== null}
-                  sx={{ margin: 1 }}
-                  onClick={() => handleSubmit(reponse)}
-                >
-                  {index + 1}
-                </Button>
-              ))}
-          </div>
-        </>
-      )}
+      <div className="flex-container">
+        {questionIndex < questions.length && (
+          <>
+            <img
+              src={`/images/${category}.jpg`}
+              alt="Category"
+              className="flex-item-left"
+            />
+            <div className="flex-item-right">
+              {!isLastQuestionInCategory && (
+                <>
+                  <h4 style={{ marginTop: "4rem" }}>
+                    Question{" "}
+                    {questionIndex + 1 + (currentPage - 1) * questions.length} /{" "}
+                    {totalQuestions}
+                  </h4>
+                </>
+              )}
+              <p>
+                {
+                  questions[
+                    questionIndex + (currentPage - 1) * questions.length
+                  ].question
+                }
+              </p>
+              <h4>{questions[questionIndex].text}</h4>
+              <div className="buttons">
+                {Array(5)
+                  .fill(null)
+                  .map((_, index) => (
+                    <Button
+                      key={index + 1}
+                      variant="contained"
+                      disabled={reponse !== null}
+                      sx={{ margin: 1 }}
+                      onClick={() => handleSubmit(reponse)}
+                    >
+                      {index + 1}
+                    </Button>
+                  ))}
+              </div>
+            </div>
+
+            {/* fin flex-item-right */}
+          </>
+        )}
+      </div>
 
       {/* A la fin des questions d'une catégorie */}
       {questionIndex === questions.length && (
