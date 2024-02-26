@@ -48,7 +48,7 @@ function App() {
     const getCategoryForPage = () => {
       // Implémentez la logique pour obtenir la catégorie en fonction de la page actuelle.
       // Pour l'exemple, une catégorie statique.
-      setCurrentCategory("Catégorie 1");
+      setCurrentCategory("Catégorie " + questionsData[currentPage].category);
     };
 
     getCategoryForPage();
