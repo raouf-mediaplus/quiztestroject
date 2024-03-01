@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Home from "./components/Home";
 import Quiz from "./components/Quiz";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importez BrowserRouter
