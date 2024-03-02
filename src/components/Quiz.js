@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import QuestionPage from "./QuestionPage";
 import Header from "./Header";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { LinearProgress } from "@mui/material";
 
 var questionsData = require("../data/questions.json");
 const theme = createTheme();
 
-function Home() {
+function Quiz() {
   const [currentCategory, setCurrentCategory] = useState("");
   const [questions, setQuestions] = useState([]);
   const [reponses, setReponses] = useState([]);
@@ -42,15 +41,11 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    // Exemple de récupération de la catégorie en fonction de la page actuelle ou d'autres informations
-    const getCategoryForPage = () => {
-      // Implémentez la logique pour obtenir la catégorie en fonction de la page actuelle.
-      // Pour l'exemple, une catégorie statique.
-      setCurrentCategory("Catégorie " + questionsData[currentPage].category);
-    };
-
-    getCategoryForPage();
-  }, []);
+    if (completedQuestions < questionsData.length) {
+      setCurrentCategory(questionsData[completedQuestions].category);
+      console.log(completedQuestions);
+    }
+  }, [completedQuestions]);
 
   // const handleAnswerSubmit = (questionIndex, reponse) => {
   //   setReponses([...reponses, reponse]);
@@ -86,4 +81,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Quiz;
