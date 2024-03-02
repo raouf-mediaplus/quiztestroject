@@ -35,6 +35,7 @@ function Quiz() {
 
   //   fetchQuestions();
   // }, []);
+
   useEffect(() => {
     setQuestions(questionsData);
     setQuestionsPerPage(questionsData.length);
@@ -43,21 +44,12 @@ function Quiz() {
   useEffect(() => {
     if (completedQuestions < questionsData.length) {
       setCurrentCategory(questionsData[completedQuestions].category);
-      console.log(completedQuestions);
     }
   }, [completedQuestions]);
 
-  // const handleAnswerSubmit = (questionIndex, reponse) => {
-  //   setReponses([...reponses, reponse]);
-  //   setCompletedQuestions(completedQuestions + 1);
-  //   if (questionIndex + 1 === questions.length) {
-  //     setCurrentPage(currentPage + 1);
-  //   }
-  // };
-
   const handleAnswerSubmit = (questionIndex, response) => {
     const updatedReponses = [...reponses];
-    updatedReponses[questionIndex] = response;
+    updatedReponses.push(response);
     setReponses(updatedReponses);
     setCompletedQuestions(completedQuestions + 1);
     if (questionIndex + 1 === questions.length) {

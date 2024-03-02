@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { LinearProgress, Button } from "@mui/material";
 import "./QuestionPage.css";
+import ResultsTable from "./ResultsTable";
 
 function QuestionPage({
   questions,
@@ -14,10 +15,10 @@ function QuestionPage({
   const [questionIndex, setQuestionIndex] = useState(0);
   const [reponse, setReponse] = useState(null);
 
-  const handleSubmit = (reponse) => {
-    onAnswerSubmit(currentPage - 1, reponse);
+  const handleSubmit = (index) => {
+    onAnswerSubmit(currentPage - 1, index + 1);
     setQuestionIndex(questionIndex + 1);
-    setReponse(reponse);
+    setReponse(index + 1);
   };
 
   // Vérification si des questions existent
@@ -46,11 +47,11 @@ function QuestionPage({
             <div className="flex-item-right">
               {!isLastQuestionInCategory && (
                 <>
-                  <h4 style={{ marginTop: "4rem" }}>
+                  <h3 style={{ marginTop: "4rem" }}>
                     Question{" "}
                     {questionIndex + 1 + (currentPage - 1) * questions.length} /{" "}
                     {totalQuestions}
-                  </h4>
+                  </h3>
                 </>
               )}
               <p>
@@ -68,9 +69,8 @@ function QuestionPage({
                     <Button
                       key={index + 1}
                       variant="contained"
-                      disabled={reponse !== null}
                       sx={{ margin: 1, bgcolor: "#459df4" }}
-                      onClick={() => handleSubmit(reponse)}
+                      onClick={() => handleSubmit(index)}
                     >
                       {index + 1}
                     </Button>
@@ -85,9 +85,15 @@ function QuestionPage({
 
       {/* A la fin des questions d'une catégorie */}
       {questionIndex === questions.length && (
-        <p style={{ color: "white" }}>
-          Fin des questions. Merci pour votre participation.
-        </p>
+        <>
+          <p style={{ color: "white" }}>
+            Fin des questions. Merci pour votre participation.
+          </p>
+          <br></br>
+          <h4 style={{ color: "white" }}>Summary</h4>
+
+          <ResultsTable results={reponses} questions={questions} />
+        </>
       )}
     </div>
   );

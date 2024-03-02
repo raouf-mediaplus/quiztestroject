@@ -1,0 +1,26 @@
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results-table th .results-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.results-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+.results-table td {
+    background-color: #fff;
+    color: #333;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
