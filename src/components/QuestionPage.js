@@ -86,7 +86,7 @@ function QuestionPage({
       {/* A la fin des questions d'une catégorie */}
       {questionIndex === questions.length && (
         <p style={{ color: "white" }}>
-          Fin des questions de la catégorie: {category}
+          Fin des questions. Merci pour votre participation.
         </p>
       )}
     </div>
