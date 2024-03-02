@@ -11,7 +11,7 @@ function Home() {
     <div className="home-container">
       <img
         className="flex-right"
-        src="./images/landingBg.jpg"
+        src="./images/landingBg.svg"
         alt="background landing page"
       ></img>
       <div className="flex-left">
@@ -37,7 +37,7 @@ function Home() {
             WELCOME BACK
           </p>
           <p style={{ fontSize: "0.9rem", opacity: "0.7" }}>
-            Login to manage your account.
+            Login to start the Quiz.
           </p>
           <div className="login-container">
             <TextField

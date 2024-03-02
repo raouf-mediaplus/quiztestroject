@@ -69,7 +69,7 @@ function QuestionPage({
                       key={index + 1}
                       variant="contained"
                       disabled={reponse !== null}
-                      sx={{ margin: 1 }}
+                      sx={{ margin: 1, bgcolor: "#459df4" }}
                       onClick={() => handleSubmit(reponse)}
                     >
                       {index + 1}
