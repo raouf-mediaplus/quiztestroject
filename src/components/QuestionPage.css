@@ -13,7 +13,7 @@
 
 .flex-item-left {
     flex: 33% 1;
-    width: 100%;
+    width: 33%;
     margin-left: -2em;
     height: 100vh;
     object-fit: cover;

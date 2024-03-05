@@ -5,7 +5,7 @@
 
 .flex-right {
     flex: 35%;
-    width: 100%;
+    width: 35%;
     height: 100vh;
     object-fit: cover;
 }
