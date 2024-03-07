@@ -1,0 +1,92 @@
+[
+  {
+    "id": 0,
+    "Name": "DORA metrics",
+    "Categories": [
+      {
+        "Category": "Time",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Deployment lead time", "Show": true },
+          { "id": 1, "Metric": "Change failure rate", "Show": true }
+        ]
+      },
+      {
+        "Category": "Quality",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Change failure rate", "Show": true },
+          { "id": 1, "Metric": "Test coverage rate", "Show": true }
+        ]
+      },
+      {
+        "Category": "Reliability",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Service uptime rate", "Show": true },
+          { "id": 1, "Metric": "Mean Time To Repair (MTTR)", "Show": true }
+        ]
+      },
+      {
+        "Category": "Efficiency",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Lead time", "Show": true },
+          { "id": 1, "Metric": "Conversion rate", "Show": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "Name": "FLOW metrics",
+    "Categories": [
+      {
+        "Category": "Commits",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Number of commits", "Show": true },
+          { "id": 1, "Metric": "Commit frequency", "Show": true }
+        ]
+      },
+      {
+        "Category": "Development",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Pull request rate", "Show": true },
+          { "id": 1, "Metric": "Development cycle time", "Show": true }
+        ]
+      },
+      {
+        "Category": "Deployment",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Deployment rate", "Show": true },
+          { "id": 1, "Metric": "Deployment success rate", "Show": true }
+        ]
+      },
+      {
+        "Category": "Production",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "Error rate", "Show": true },
+          { "id": 1, "Metric": "Availability", "Show": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "Name": "Other metrics",
+    "Categories": [
+      {
+        "Category": "cat1",
+        "Show": true,
+        "Values": [
+          { "id": 0, "Metric": "val1", "Show": true },
+          { "id": 1, "Metric": "val2", "Show": true }
+        ]
+      }
+    ]
+  }
+]

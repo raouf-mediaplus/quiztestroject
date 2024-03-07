@@ -68,7 +68,7 @@ function Home() {
                 style: { color: "white" }, // Définir la couleur du label en blanc
               }}
             />
-            <Link to="/quiz">
+            <Link to="/models">
               <Button
                 variant="contained"
                 color="primary"
@@ -79,7 +79,7 @@ function Home() {
             </Link>
           </div>
         </div>
-        <Link to="/quiz">
+        <Link to="/models">
           <Button
             className="login-button"
             variant="contained"
@@ -90,7 +90,7 @@ function Home() {
             Login with GitHub
           </Button>
         </Link>
-        <Link to="/quiz">
+        <Link to="/models">
           <Button
             className="login-button"
             variant="contained"
