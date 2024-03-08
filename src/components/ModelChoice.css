@@ -1,0 +1,45 @@
+.model-choice-container {
+    background-color: #1A2138;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 2em auto;
+    color: #fff;
+}
+
+.model-choice-header {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00AB55;
+}
+
+.model-choice-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.model-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+}
+
+.categories-list {
+    list-style-type: none;
+    padding: 2em;
+    padding-top: 0.5em;
+}
+
+.categories-list-item {
+    margin-bottom: 10px;
+}
+
+.categories-list-item input[type="checkbox"] {
+    margin-right: 10px;
+}
