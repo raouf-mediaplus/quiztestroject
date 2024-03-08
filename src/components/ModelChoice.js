@@ -19,6 +19,18 @@ function ModelChoice() {
     const initialCheckedCategories = {};
     const initialCheckedMetrics = {};
 
+    // Initialise les états des catégories à cocher
+    modelsData[selected].Categories.forEach((cat) => {
+      initialCheckedCategories[cat.Category] = true;
+    });
+
+    // Initialise les états des métriques à cocher
+    modelsData[selected].Categories.forEach((cat) => {
+      cat.Values.forEach((metric) => {
+        initialCheckedMetrics[metric.Metric] = true;
+      });
+    });
+
     setCheckedCategories(initialCheckedCategories);
     setCheckedMetrics(initialCheckedMetrics);
   }, [selected]);
@@ -47,7 +59,7 @@ function ModelChoice() {
       <input
         style={{ marginBottom: "1em", marginTop: "1em" }}
         type="checkbox"
-        checked={checkedCategories[cat.Category] && true}
+        checked={checkedCategories[cat.Category]}
         name={cat.Category}
         value={cat.Category}
         onChange={handleCategoryChange}
@@ -58,7 +70,7 @@ function ModelChoice() {
           <input
             style={{ marginLeft: "2em", marginBottom: "1em" }}
             type="checkbox"
-            checked={checkedMetrics[metric.Metric] && true}
+            checked={checkedMetrics[metric.Metric]}
             name={metric.Metric}
             value={metric.Metric}
             onChange={handleMetricChange}
