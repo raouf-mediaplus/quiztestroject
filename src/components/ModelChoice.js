@@ -30,7 +30,6 @@ function ModelChoice() {
         initialCheckedMetrics[metric.Metric] = true;
       });
     });
-
     setCheckedCategories(initialCheckedCategories);
     setCheckedMetrics(initialCheckedMetrics);
   }, [selected]);
@@ -70,7 +69,9 @@ function ModelChoice() {
           <input
             style={{ marginLeft: "2em", marginBottom: "1em" }}
             type="checkbox"
-            checked={checkedMetrics[metric.Metric]}
+            checked={
+              checkedCategories[cat.Category] && checkedMetrics[metric.Metric]
+            }
             name={metric.Metric}
             value={metric.Metric}
             onChange={handleMetricChange}
