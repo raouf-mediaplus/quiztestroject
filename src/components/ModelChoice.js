@@ -47,6 +47,17 @@ function ModelChoice() {
     setCheckedMetrics({ ...checkedMetrics, [name]: checked });
   };
 
+  const handleStartQuiz = () => {
+    // Récupérer les éléments cochés
+    const selectedItems = {
+      categories: checkedCategories,
+      metrics: checkedMetrics,
+    };
+
+    // Afficher les éléments cochés dans la console
+    console.log(selectedItems);
+  };
+
   const optionsSelect = models.map((model) => (
     <option key={model.id} value={model.id}>
       {model.Name}
@@ -55,23 +66,13 @@ function ModelChoice() {
 
   const CategoriesList = modelsData[selected].Categories.map((cat) => (
     <div className="categories-list-item" key={cat.id}>
-      <input
-        style={{ marginBottom: "1em", marginTop: "1em" }}
-        type="checkbox"
-        checked={checkedCategories[cat.Category]}
-        name={cat.Category}
-        value={cat.Category}
-        onChange={handleCategoryChange}
-      />
       <span>{cat.Category}</span>
       {cat.Values.map((metric) => (
         <div key={metric.id}>
           <input
             style={{ marginLeft: "2em", marginBottom: "1em" }}
             type="checkbox"
-            checked={
-              checkedCategories[cat.Category] && checkedMetrics[metric.Metric]
-            }
+            checked={checkedMetrics[metric.Metric]}
             name={metric.Metric}
             value={metric.Metric}
             onChange={handleMetricChange}
@@ -95,8 +96,13 @@ function ModelChoice() {
       <Divider style={{ borderColor: "rgba(255,255,255,0.1)" }} />
       <ul className="categories-list">{CategoriesList}</ul>
       <Link to="/quiz">
-        <Button variant="contained" color="primary" className="login-button">
-          Start the Quiz
+        <Button
+          variant="contained"
+          color="primary"
+          className="login-button"
+          onClick={handleStartQuiz}
+        >
+          Start now
         </Button>
       </Link>
     </div>

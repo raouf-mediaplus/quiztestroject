@@ -4,35 +4,39 @@
     "Name": "DORA metrics",
     "Categories": [
       {
+        "id": 0,
         "Category": "Time",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Deployment lead time", "Show": true },
-          { "id": 1, "Metric": "Change failure rate", "Show": true }
+          { "id": 0, "Metric": "Deployment lead time" },
+          { "id": 1, "Metric": "Change failure rate for time" }
         ]
       },
       {
+        "id": 1,
         "Category": "Quality",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Change failure rate", "Show": true },
-          { "id": 1, "Metric": "Test coverage rate", "Show": true }
+          { "id": 0, "Metric": "Change failure rate" },
+          { "id": 1, "Metric": "Test coverage rate for quality" }
         ]
       },
       {
+        "id": 2,
         "Category": "Reliability",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Service uptime rate", "Show": true },
-          { "id": 1, "Metric": "Mean Time To Repair (MTTR)", "Show": true }
+          { "id": 0, "Metric": "Service uptime rate" },
+          { "id": 1, "Metric": "Mean Time To Repair (MTTR)" }
         ]
       },
       {
+        "id": 3,
         "Category": "Efficiency",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Lead time", "Show": true },
-          { "id": 1, "Metric": "Conversion rate", "Show": true }
+          { "id": 0, "Metric": "Lead time" },
+          { "id": 1, "Metric": "Conversion rate" }
         ]
       }
     ]
@@ -42,35 +46,39 @@
     "Name": "FLOW metrics",
     "Categories": [
       {
+        "id": 0,
         "Category": "Commits",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Number of commits", "Show": true },
-          { "id": 1, "Metric": "Commit frequency", "Show": true }
+          { "id": 0, "Metric": "Number of commits" },
+          { "id": 1, "Metric": "Commit frequency" }
         ]
       },
       {
+        "id": 1,
         "Category": "Development",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Pull request rate", "Show": true },
-          { "id": 1, "Metric": "Development cycle time", "Show": true }
+          { "id": 0, "Metric": "Pull request rate" },
+          { "id": 1, "Metric": "Development cycle time" }
         ]
       },
       {
+        "id": 2,
         "Category": "Deployment",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Deployment rate", "Show": true },
-          { "id": 1, "Metric": "Deployment success rate", "Show": true }
+          { "id": 0, "Metric": "Deployment rate" },
+          { "id": 1, "Metric": "Deployment success rate" }
         ]
       },
       {
+        "id": 3,
         "Category": "Production",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "Error rate", "Show": true },
-          { "id": 1, "Metric": "Availability", "Show": true }
+          { "id": 0, "Metric": "Error rate" },
+          { "id": 1, "Metric": "Availability" }
         ]
       }
     ]
@@ -80,11 +88,12 @@
     "Name": "Other metrics",
     "Categories": [
       {
+        "id": 0,
         "Category": "cat1",
         "Show": true,
         "Values": [
-          { "id": 0, "Metric": "val1", "Show": true },
-          { "id": 1, "Metric": "val2", "Show": true }
+          { "id": 0, "Metric": "val1" },
+          { "id": 1, "Metric": "val2" }
         ]
       }
     ]
