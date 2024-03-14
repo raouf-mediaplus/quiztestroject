@@ -47,6 +47,17 @@ function ModelChoice() {
     setCheckedMetrics({ ...checkedMetrics, [name]: checked });
   };
 
+  const handleStartQuiz = () => {
+    // Récupérer les éléments cochés
+    const selectedItems = {
+      categories: checkedCategories,
+      metrics: checkedMetrics,
+    };
+
+    // Afficher les éléments cochés dans la console
+    console.log(selectedItems);
+  };
+
   const optionsSelect = models.map((model) => (
     <option key={model.id} value={model.id}>
       {model.Name}
@@ -95,8 +106,13 @@ function ModelChoice() {
       <Divider style={{ borderColor: "rgba(255,255,255,0.1)" }} />
       <ul className="categories-list">{CategoriesList}</ul>
       <Link to="/quiz">
-        <Button variant="contained" color="primary" className="login-button">
-          Start the Quiz
+        <Button
+          variant="contained"
+          color="primary"
+          className="login-button"
+          onClick={handleStartQuiz}
+        >
+          Start now
         </Button>
       </Link>
     </div>
