@@ -13,7 +13,9 @@ function Header({ category }) {
           <span>johnDoe@mail.com</span>
         </div>
       </div>
-      <h3>Catégorie: {category}</h3>
+      <h3 className="category">
+        Catégorie: <span className="category-text">{category}</span>
+      </h3>
     </div>
   );
 }

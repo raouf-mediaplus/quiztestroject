@@ -47,11 +47,11 @@ function QuestionPage({
             <div className="flex-item-right">
               {!isLastQuestionInCategory && (
                 <>
-                  <h3 style={{ marginTop: "4rem" }}>
+                  <h2 style={{ marginTop: "4rem" }}>
                     Question{" "}
                     {questionIndex + 1 + (currentPage - 1) * questions.length} /{" "}
                     {totalQuestions}
-                  </h3>
+                  </h2>
                 </>
               )}
               <p>
@@ -62,6 +62,9 @@ function QuestionPage({
                 }
               </p>
               <h4>{questions[questionIndex].text}</h4>
+              <p style={{ marginLeft: "1em", opacity: "0.7" }}>
+                {questions[questionIndex].explanation}
+              </p>
               <div className="buttons">
                 {Array(5)
                   .fill(null)
@@ -87,7 +90,7 @@ function QuestionPage({
       {questionIndex === questions.length && (
         <>
           <p style={{ color: "white" }}>
-            Fin des questions. Merci pour votre participation.
+            End of the quiz. Thank you for your participation.
           </p>
           <br></br>
           <h4 style={{ color: "white" }}>Summary</h4>

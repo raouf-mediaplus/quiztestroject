@@ -14,28 +14,6 @@ function Quiz() {
   const [currentPage, setCurrentPage] = useState(1);
   const [questionsPerPage, setQuestionsPerPage] = useState(1); // Nombre de questions par page, initialisé à 1
 
-  // useEffect(() => {
-  //   const fetchQuestions = async () => {
-  //     try {
-  //       const response = await fetch("data/questions.json");
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch questions");
-  //       }
-  //       const data = await response.json();
-  //       if (!Array.isArray(data)) {
-  //         throw new Error("Invalid data format: questions should be an array");
-  //       }
-  //       setQuestions(data);
-  //       setQuestionsPerPage(data.length);
-  //     } catch (error) {
-  //       console.error("Error fetching questions:", error.message);
-  //       // Gérer l'erreur : afficher un message d'erreur à l'utilisateur, journaliser l'erreur, etc.
-  //     }
-  //   };
-
-  //   fetchQuestions();
-  // }, []);
-
   useEffect(() => {
     setQuestions(questionsData);
     setQuestionsPerPage(questionsData.length);

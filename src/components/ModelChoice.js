@@ -50,7 +50,7 @@ function ModelChoice() {
   const handleStartQuiz = () => {
     // Récupérer les éléments cochés
     const selectedItems = {
-      categories: checkedCategories,
+      // categories: checkedCategories,
       metrics: checkedMetrics,
     };
 
@@ -66,7 +66,7 @@ function ModelChoice() {
 
   const CategoriesList = modelsData[selected].Categories.map((cat) => (
     <div className="categories-list-item" key={cat.id}>
-      <span>{cat.Category}</span>
+      <h3 className="categories">{cat.Category}</h3>
       {cat.Values.map((metric) => (
         <div key={metric.id}>
           <input
@@ -77,9 +77,12 @@ function ModelChoice() {
             value={metric.Metric}
             onChange={handleMetricChange}
           />
-          <span>{metric.Metric}</span>
+          <span style={{ opacity: "0.8" }}>{metric.Metric}</span>
         </div>
       ))}
+      <Divider
+        style={{ borderColor: "rgba(255,255,255,0.05)", marginTop: "1em" }}
+      />
     </div>
   ));
 
