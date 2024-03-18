@@ -5,6 +5,7 @@ import Divider from "@mui/material/Divider";
 import InfoIcon from "@mui/icons-material/Info";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "./ModelChoice.css";
+import axios from "axios";
 
 var modelsData = require("../data/models.json");
 
@@ -58,6 +59,16 @@ function ModelChoice() {
 
     // Afficher les éléments cochés dans la console
     console.log(selectedItems);
+
+    // Envoyer les données à un serveur
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", selectedItems)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const optionsSelect = models.map((model) => (
