@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import Divider from "@mui/material/Divider";
+import InfoIcon from "@mui/icons-material/Info";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "./ModelChoice.css";
 
 var modelsData = require("../data/models.json");
@@ -88,21 +90,28 @@ function ModelChoice() {
 
   return (
     <div className="model-choice-container">
-      <h1 className="model-choice-header">Choose your metrics</h1>
+      <h1 className="model-choice-header">Choose your metric System</h1>
       <p className="model-choice-description">
         Here you can choose your performance test system and the metrics you
         want to focus on.
       </p>
+
       <select className="model-select" name="models" onChange={handleSelect}>
         {optionsSelect}
       </select>
+      <div className="align-center">
+        <InfoIcon color="white" />
+        <p> You can check / uncheck any of the options below</p>
+      </div>
       <Divider style={{ borderColor: "rgba(255,255,255,0.1)" }} />
       <ul className="categories-list">{CategoriesList}</ul>
       <Link to="/quiz">
         <Button
+          style={{ width: "100%", marginTop: "-3rem" }}
           variant="contained"
           color="primary"
           className="login-button"
+          startIcon={<PlayArrowIcon />}
           onClick={handleStartQuiz}
         >
           Start now

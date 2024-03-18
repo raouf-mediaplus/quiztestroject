@@ -33,7 +33,7 @@
 .categories-list {
     list-style-type: none;
     padding: 2em;
-    padding-top: 0.5em;
+    padding-top: 0.1rem;
 }
 
 .categories-list-item {
@@ -42,4 +42,19 @@
 
 .categories-list-item input[type="checkbox"] {
     margin-right: 10px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.align-center p {
+    margin-left: 0.5rem;
+}
+
+.login-button {
+
+    margin-top: -3rem;
 }
