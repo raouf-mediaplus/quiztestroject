@@ -13,12 +13,12 @@ function QuestionPage({
   category,
 }) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [reponse, setReponse] = useState(null);
+  //const [reponse, setReponse] = useState(null);
 
   const handleSubmit = (index) => {
     onAnswerSubmit(currentPage - 1, index + 1);
     setQuestionIndex(questionIndex + 1);
-    setReponse(index + 1);
+    // setReponse(index + 1);
   };
 
   // Vérification si des questions existent
@@ -28,6 +28,11 @@ function QuestionPage({
   // Vérifier si la question actuelle est la dernière de la catégorie
   const isLastQuestionInCategory = questionIndex === questions.length;
 
+  // const handleLastPage = () => {
+  //   onAnswerSubmit(currentPage, 1);
+  //   setQuestionIndex(questionIndex - 1);
+  // };
+
   return (
     <div className="questionsContainer">
       <LinearProgress
@@ -36,6 +41,7 @@ function QuestionPage({
         color="success"
         sx={{ bgcolor: "#fff", marginTop: "-2rem" }}
       />
+
       <div className="flex-container">
         {questionIndex < questions.length && (
           <>
@@ -63,8 +69,15 @@ function QuestionPage({
               </p>
               <h4>{questions[questionIndex].text}</h4>
               <p style={{ marginLeft: "1em", opacity: "0.7" }}>
-                {questions[questionIndex].explanation}
+                <div
+                  className="Container"
+                  dangerouslySetInnerHTML={{
+                    __html: questions[questionIndex].explanation,
+                  }}
+                ></div>
+                {/* {questions[questionIndex].explanation } */}
               </p>
+              {/* <button onClick={() => handleLastPage(1)}>Go back</button> */}
               <div className="buttons">
                 {Array(5)
                   .fill(null)

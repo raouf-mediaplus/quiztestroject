@@ -3,7 +3,7 @@
     "id": 1,
     "text": "On a scale from 1 to 5, how crucial is the metric of customer feedback speed in monitoring systems for informing Business Decision",
     "category": "Processes",
-    "explanation": "some explanation text can be added here"
+    "explanation": "<h2 style=\" color:red \">some explanation text can be added here </h2>"
   },
   {
     "id": 2,
