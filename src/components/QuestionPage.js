@@ -11,6 +11,7 @@ function QuestionPage({
   totalQuestions,
   onAnswerSubmit,
   category,
+  onPrevious,
 }) {
   const [questionIndex, setQuestionIndex] = useState(0);
   //const [reponse, setReponse] = useState(null);
@@ -28,10 +29,10 @@ function QuestionPage({
   // Vérifier si la question actuelle est la dernière de la catégorie
   const isLastQuestionInCategory = questionIndex === questions.length;
 
-  // const handleLastPage = () => {
-  //   onAnswerSubmit(currentPage, 1);
-  //   setQuestionIndex(questionIndex - 1);
-  // };
+  const handlePrevQuestion = () => {
+    onPrevious(questionIndex - 1);
+    setQuestionIndex(questionIndex - 1);
+  };
 
   return (
     <div className="questionsContainer">
@@ -77,7 +78,7 @@ function QuestionPage({
                 ></div>
                 {/* {questions[questionIndex].explanation } */}
               </p>
-              {/* <button onClick={() => handleLastPage(1)}>Go back</button> */}
+
               <div className="buttons">
                 {Array(5)
                   .fill(null)
@@ -92,6 +93,16 @@ function QuestionPage({
                     </Button>
                   ))}
               </div>
+              {/* Bouton back */}
+              {questionIndex != 0 && (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handlePrevQuestion()}
+                >
+                  Previous
+                </Button>
+              )}
             </div>
 
             {/* fin flex-item-right */}

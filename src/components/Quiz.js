@@ -36,7 +36,15 @@ function Quiz() {
       setCurrentPage(currentPage + 1);
     }
   };
-
+  const handlePrevious = (questionIndex) => {
+    const updatedReponses = [...reponses];
+    updatedReponses.pop();
+    setReponses(updatedReponses);
+    setCompletedQuestions(completedQuestions - 1);
+    // if (questionIndex + 1 === questionsData.length) {
+    //   setCurrentPage(currentPage + 1);
+    // }
+  };
   return (
     <ThemeProvider theme={theme}>
       {error && <div>{error}</div>}
@@ -52,6 +60,7 @@ function Quiz() {
             totalQuestions={questionsData.length}
             onAnswerSubmit={handleAnswerSubmit}
             category={currentCategory}
+            onPrevious={handlePrevious}
           />
         </>
       )}
