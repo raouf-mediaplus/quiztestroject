@@ -69,15 +69,16 @@ function QuestionPage({
                 }
               </p>
               <h4>{questions[questionIndex].text}</h4>
-              <p style={{ marginLeft: "1em", opacity: "0.7" }}>
-                <div
-                  className="Container"
-                  dangerouslySetInnerHTML={{
-                    __html: questions[questionIndex].explanation,
-                  }}
-                ></div>
-                {/* {questions[questionIndex].explanation } */}
-              </p>
+              {/* <p style={{ marginLeft: "1em", opacity: "0.7" }}> */}
+              <div
+                style={{ marginLeft: "1em", opacity: "0.7" }}
+                className="Container"
+                dangerouslySetInnerHTML={{
+                  __html: questions[questionIndex].explanation,
+                }}
+              ></div>
+              {/* {questions[questionIndex].explanation } */}
+              {/* </p> */}
 
               <div className="buttons">
                 {Array(5)

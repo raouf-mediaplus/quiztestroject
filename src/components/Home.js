@@ -59,7 +59,7 @@ function Home() {
               variant="outlined"
               size="small"
               type="password"
-              backgroundColor="white"
+              backgroundcolor="white"
               fullWidth
               InputProps={{
                 style: { color: "white", borderColor: "white" }, // Définir la couleur du texte en blanc
