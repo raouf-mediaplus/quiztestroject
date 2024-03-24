@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LinearProgress, Button } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./QuestionPage.css";
 import ResultsTable from "./ResultsTable";
 
@@ -52,6 +53,23 @@ function QuestionPage({
               className="flex-item-left"
             />
             <div className="flex-item-right">
+              {/* Bouton back */}
+              {questionIndex != 0 && (
+                <Button
+                  variant="contained"
+                  color="warning"
+                  startIcon={<ArrowBackIcon />}
+                  sx={{
+                    margin: 2,
+                    marginBottom: 0,
+                    position: "absolute",
+                    right: "4em",
+                  }}
+                  onClick={() => handlePrevQuestion()}
+                >
+                  Previous
+                </Button>
+              )}
               {!isLastQuestionInCategory && (
                 <>
                   <h2 style={{ marginTop: "4rem" }}>
@@ -94,16 +112,6 @@ function QuestionPage({
                     </Button>
                   ))}
               </div>
-              {/* Bouton back */}
-              {questionIndex != 0 && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={() => handlePrevQuestion()}
-                >
-                  Previous
-                </Button>
-              )}
             </div>
 
             {/* fin flex-item-right */}
